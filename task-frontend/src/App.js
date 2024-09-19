@@ -1,10 +1,9 @@
 // src/App.js
 import React, { useEffect, useState } from "react";
 import io from "socket.io-client";
-import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { requestFirebaseNotificationPermission } from "./firebase"; // Import for FCM, optional
+import Comments from "./components/Comments";
 
 const SOCKET_SERVER_URL = "http://localhost:5000"; // Backend server URL
 

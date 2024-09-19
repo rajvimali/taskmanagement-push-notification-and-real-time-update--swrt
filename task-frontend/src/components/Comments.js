@@ -16,12 +16,16 @@ const Comments = ({ taskId }) => {
   }, [taskId]);
 
   const handleAddComment = async () => {
-    // Add new comment
-    const res = await axios.post(`/api/tasks/${taskId}/comments`, {
+    if (!newComment) return; // Prevent empty comments
+
+    // Add new comment without using 'res'
+    await axios.post(`/api/tasks/${taskId}/comments`, {
       text: newComment,
       userId: "current_user_id", // Replace with the actual logged-in user ID
     });
-    setNewComment("");
+
+    // Optionally refetch comments after adding
+    setNewComment(""); // Clear the input field
   };
 
   return (

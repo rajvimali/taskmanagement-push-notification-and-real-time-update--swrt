@@ -2,7 +2,6 @@
 const messaging = require("../firebaseAdmin"); // Import messaging from Firebase Admin
 const task = require("../models/task");
 const task = require("../models/task");
-// const Task = require("../models/Task");
 const User = require("../models/User"); // Assume you have a User model
 
 // Send a real-time task assignment notification
